@@ -1,0 +1,10 @@
+hashmap和hashtable的区别
+1.key,value是否为空
+2.线程是否安全
+3.遍历方式
+4.初始容量和扩容方面
+5.底层数据结构改进
+LinkedHashMap和HashMap的区别
+比HashMap多维护一个双向链表
+可以按照插入的顺序从头部或者尾部迭代
+内存相比而言要比HashMap大
