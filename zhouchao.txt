@@ -1,1 +1,2 @@
-fucking master branch
+<<<<<<< HEAD
+ok do not argument with each other,let us play!
