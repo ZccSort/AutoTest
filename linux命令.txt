@@ -1,0 +1,54 @@
+利用securityCRT传文件到服务器命令：
+首先选中sftp连接页
+lcd 文件所在目录
+put 文件名称
+quit
+集群启动命令：
+cd redis01
+./redis-server redis.conf
+?D:/1512523565422_615.jpg
+
+解压：tar -zxf  文件名
+删除：删除文件夹实例：
+rm -rf /var/log/httpd/access
+将会删除/var/log/httpd/access目录以及其下所有文件、文件夹
+删除文件使用实例：
+rm -f /var/log/httpd/access.log
+将会强制删除/var/log/httpd/access.log这个文件
+创建目录：mkdir  /usr/local/solr
+复制文件：cp -r apache-tomcat-7.0.47   /usr/local/solr/tomcat
+(就会将apache-tomcat-7.0.47复制到usr/local/solr/tomcat下，并且将apache-tomcat-7.0.47改为tomcat)
+粘贴：ctrl+shift+v
+在tomcat目录下启动tomcat:  bin/startup.sh
+查看tomcat启动信息：tail -f logs/catalina.out
+在文档中跳到最后一行：shift+g
+编辑文件:
+vim 文件名称，shift+g到文件末尾，
+查找文件：
+find  name /
+软件相关
+启动zookeeper:cd zookeeper-3.4.6/bin,  ->./zkServer.sh start
+启动activemq:bin目录下./activemq start
+启动redis单机版：cd /usr/local/redis/bin/   ->bin目录下 ./redis-server  redis.conf
+启动solr单机版:cd /usr/local/solr/tomcat/bin/   ->./startup.sh
+
+linux创建多级目录： make  /var/temp/nginx/ -p
+正常关闭进程   kill+进程号
+关闭ngix:sbin目录下,    ./nginx   ,./nginx   然后-s stop 
+改完nginx文件刷新其配置：nginx目录下，sbin/nginx -s reload
+复制文件：非编辑状态下，shift+v,然后上下键选择要复制的内容，按y复制
+找到要复制的地方，按p粘贴，按u撤销
+
+
+
+复制当前文件并为他改名：cp -r html/   htm81(复制html文件，并将其名字改为htm81)
+复制当前文件改名：cp 文件名    要改的名
+linux导入mysql数据：
+mysql -uroot -p
+use o2o;
+source  ~/o2o.sql;
+
+在linux中添加一个(work)账户并配置密码
+adduser work
+passwd  work
+切换账号：su work
