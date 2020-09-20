@@ -1,0 +1,22 @@
+﻿[
+  {
+    "description":"这是一个带header信息的post请求",
+    "request":{
+      "uri":"/post/with/heaers",
+      "method":"post",
+      "headers":{
+         "content-type":"application/json"
+      },
+      "json":{
+        "name":"zhouchao",
+        "sex":"woman"
+      }
+    },
+    "response":{
+      "json":{
+        "zhouchao":"success",
+        "status":"1"
+      }
+    }
+  }
+]

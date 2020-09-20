@@ -1,0 +1,52 @@
+[
+  {
+    "description":"模拟一个没有参数的get请求 ",
+    "request":{
+       "uri":"/getdemo",
+       "method":"get"
+    },
+    "response":{
+       "text":"这是一个没有参数的get请求"
+    }
+  },
+  {
+    "description":"模拟一个带参数的get请求",
+    "request":{
+       "uri":"/getwithparm",
+       "method":"get",
+       "queries":{
+          "name":"zhouchao",
+          "age":"24"
+       }
+    },
+    "response":{
+      "text":"我zhouchao又回来了"
+    }
+  },
+  {
+    "description":"这是一个post的请求",
+    "request":{
+      "uri":"/postdemo",
+      "method":"post"
+    },
+    "response":{
+      "text":"这是我的第一个mock的post请求"
+    }
+  },
+  {
+    "description":"带参数的post请求",
+    "request":{
+      "uri":"/postwithparam",
+      "method":"post",
+      "forms":{
+        "name":"zhouchao",
+        "sex":"man"
+      }
+    },
+    "response":{
+      "text":"带参数的post请求运行成功"
+    }
+  }
+
+
+]
