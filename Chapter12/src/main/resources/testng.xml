@@ -16,23 +16,23 @@
                     <include name="addUser"/>
                 </methods>
             </class>
-            <!--<class name="com.tester.cases.GetUserInfoTest">
+            <class name="com.tester.cases.GetUserInfoTest">
                 <methods>
                     <include name="getUserInfo"/>
                 </methods>
-            </class>-->
-            <!--<class name="com.tester.cases.UpdateUserInfoTest">
+            </class>-
+            <class name="com.tester.cases.UpdateUserInfoTest">
                 <methods>
                     <include name="updateUserInfo"/>
                     <include name="deleteUser"/>
                 </methods>
-            </class>-->
+            </class>
 
-            <!--<class name="com.tester.cases.GetUserInfoListTest">
+            <class name="com.tester.cases.GetUserInfoListTest">
                 <methods>
                     <include name="getUserListInfo"/>
                 </methods>
-            </class>-->
+            </class>
         </classes>
     </test>
 
