@@ -21,16 +21,16 @@ import java.util.List;
 
 public class GetUserInfoListTest {
     @Test(dependsOnGroups = "loginTrue",description = "获取性别为男的用户信息")
-    public void getUserListInfo() throws IOException {
+    public void getUserListInfo() throws IOException, InterruptedException {
         SqlSession session=DatabaseUtil.getSqlSession();
         GetUserListCase getUserListCase=session.selectOne("getUserListCase",1);
         System.out.println(getUserListCase.toString());
-        System.out.println(TestConfig.getUserListUrl);
 
         //发起请求,获取结果
         JSONArray resultJson=getJsonResult(getUserListCase);
-
-        //验证
+        //这里需要进行休眠,原因是你还没请求，就开始查询，肯定会出错
+        Thread.sleep(3000);
+        //验证,这里是重点呀！！！！！
         List<User> userList=session.selectList(getUserListCase.getExpected(),getUserListCase);
         for(User user:userList){
             System.out.println("获取的user:"+user.toString());
@@ -45,7 +45,6 @@ public class GetUserInfoListTest {
             Assert.assertEquals(expect.toString(),actual.toString());
         }
     }
-
     private JSONArray getJsonResult(GetUserListCase getUserListCase) throws IOException {
         HttpPost post=new HttpPost(TestConfig.getUserListUrl);
         JSONObject param=new JSONObject();

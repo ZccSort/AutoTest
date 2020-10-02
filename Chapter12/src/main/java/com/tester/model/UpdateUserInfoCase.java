@@ -1,7 +1,7 @@
 package com.tester.model;
 import lombok.Data;
 /**
- * 更新用户信息
+ * 更新用户信息接口的测试用例
  */
 @Data
 public class UpdateUserInfoCase {

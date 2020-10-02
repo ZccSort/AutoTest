@@ -35,19 +35,22 @@ public class LoginTest {
         TestConfig.defaultHttpClient=new DefaultHttpClient();
     }
     @Test(groups = "loginTrue",description = "用户登录成功接口",priority = 0)
-    public void loginTrue() throws IOException {
+    public void loginTrue() throws IOException, InterruptedException {
         SqlSession session=DatabaseUtil.getSqlSession();
         LoginCase loginCase=session.selectOne("loginCase",1);
         System.out.println(loginCase.toString());
-        System.out.println(TestConfig.loginUrl);
 
         //1.发送请求
         String result=getResult(loginCase);
-        //2.响应请求，验证结果
+        //这里需要进行休眠,原因是你还没请求，就开始查询，肯定会出错
+        //Thread.sleep(2000);
+
+        //2.验证结果
         Assert.assertEquals(loginCase.getExpected(),result);
     }
 
     private String getResult(LoginCase loginCase) throws IOException {
+        //拿到要测试的接口地址
         HttpPost httpPost=new HttpPost(TestConfig.loginUrl);
         JSONObject param=new JSONObject();
         param.put("userName",loginCase.getUserName());
@@ -63,7 +66,7 @@ public class LoginTest {
     }
 
     @Test(groups = "loginFalse",description = "用户登录失败接口",priority = 1)
-    public  void loginFalse() throws IOException {
+    public  void loginFalse() throws IOException, InterruptedException {
         SqlSession session=DatabaseUtil.getSqlSession();
         LoginCase loginCase=session.selectOne("loginCase",2);
         System.out.println(loginCase.toString());
@@ -71,7 +74,9 @@ public class LoginTest {
 
         //1.发送请求
         String result=getResult(loginCase);
-        //2.响应请求，验证结果
+        //这里需要进行休眠,原因是你还没请求，就开始查询，肯定会出错
+        Thread.sleep(2000);
+        //2.验证结果
         Assert.assertEquals(loginCase.getExpected(),result);
     }
 }

@@ -3,7 +3,7 @@ package com.tester.model;
 import lombok.Data;
 
 /**
- * 添加用户信息
+ * 添加用户信息接口的测试用例
  */
 @Data
 public class AddUserCase {

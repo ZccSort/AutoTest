@@ -3,7 +3,7 @@ package com.tester.model;
 import lombok.Data;
 
 /**
- * 用户登录
+ * 用户登录接口的测试用例
  */
 @Data
 public class LoginCase {

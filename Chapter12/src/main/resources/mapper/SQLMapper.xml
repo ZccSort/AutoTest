@@ -36,19 +36,13 @@
     <!--添加用户接口-->
     <select id="addUser" parameterType="com.tester.model.AddUserCase" resultType="com.tester.model.User">
         select * from user where
-        userName=#{userName}
-        and password=#{password}
-        and sex=#{sex}
-        and age=#{age}
-        and permission=#{permission}
-        and isDelete=#{isDelete};
-
+        userName=#{userName};
     </select>
 
     <!--获取用户信息-->
     <select id="getUserInfo" parameterType="com.tester.model.GetUserInfoCase" resultType="com.tester.model.User">
         <!-- SQL语句 -->
-        select * from user where
+        select * from user  where
         id=#{userId};
     </select>
 
@@ -91,7 +85,7 @@
                 AND isDelete=#{isDelete}
             </if>
         </trim>
-       And id = #{userId};
+       ;
     </select>
 
 
