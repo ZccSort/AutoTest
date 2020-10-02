@@ -35,6 +35,7 @@ public class UserManager {
         response.addCookie(cookie);
         log.info("查看到的结果是"+i);
         if(i==1){
+            response.setStatus(response.getStatus());
             return true;
         }
 
